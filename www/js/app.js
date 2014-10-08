@@ -33,52 +33,41 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
       url: "/tab",
       abstract: true,
+      controller: 'AppCtrl',
       templateUrl: "templates/tabs.html"
     })
-
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.contact', {
+      url: '/contact',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'tab-contact': {
+          templateUrl: 'templates/tab-contact.html',
+          controller: 'ContactCtrl'
         }
       }
     })
-
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.projects', {
+      url: '/projects',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-projects': {
+          templateUrl: 'templates/tab-projects.html',
+          controller: 'ProjectsCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.resume', {
+      url: '/resume',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-resume': {
+          templateUrl: 'templates/tab-resume.html',
+          controller: 'ResumeCtrl'
         }
       }
     });
+    // Each tab has its own nav history stack:
+
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/projects');
 
 });
 
