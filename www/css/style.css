@@ -1,1 +1,13 @@
 /* Empty. Add your own CSS if you like */
+.remove-spacing {
+	padding:none !important;
+	margin:none !important;
+	margin-top:none !important;
+	margin-bottom:5px !important;
+	width:auto !important;
+	height:auto !important;
+}
+.button-supporter {
+	height: 25px !important;
+	line-height: 15px !important;
+}

@@ -1,9 +1,46 @@
 <ion-view title="Projects">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="project in projects" type="item-text-wrap" ui-sref="project-detail({id: $index})">
-        {{project.title}}
-      </ion-item>
-    </ion-list>
+    <div class="list card" ng-repeat="project in projects" >
+
+		  <div class="item">	
+		    <h2>{{project.title}}</h2>
+		    <p>{{project.subtitle}}<p>
+		  </div>
+
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="{{project.image.url}}">
+		    <div class="row" style="text-align: center;">
+		    	<div class="col" ng-repeat="link in project.links">
+		    		<button class="button button-clear button-positive" ng-click="viewLink(link)" >
+		    			{{link.text}}
+		    		</button>
+		    	</div>
+		    </div>
+		    <p>
+		      {{project.description}}
+		    </p>
+    		<div class="row remove-spacing"><p>Administered by:</p></div>
+		  	<div class="row remove-spacing">
+		  		<div class="col remove-spacing" ng-repeat="company in project.supporters" style="height:25px;">
+		  			<button class="button button-clear button-positive button-supporter" style="height:20px;">
+		  				{{company.name}}
+		  			</button>
+		  		</div>
+		  	</div>
+		  </div>
+
+		  <div class="item item-body" ng-repeat="award in project.extras">
+			  <div class="row">
+			  	<div class="col col-10">
+			  		<i class="icon {{award.icon}}"></i>
+			  	</div>
+				  <div class="col">
+					  	{{award.title}}<br>
+					  	{{award.description}} <br>
+
+					</div>
+		  	</div>
+		  </div>
+		</div>
   </ion-content>
 </ion-view>

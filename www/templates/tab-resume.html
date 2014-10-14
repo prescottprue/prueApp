@@ -1,13 +1,21 @@
 <ion-view title="Resume" hide-nav-bar="false">
   <ion-content class="padding">
-    <h3>Languages/Frameworks</h3>
-    <p>Angular, </p>
-    <h3>Work Experience</h3>
-    	<h3>Waco</h3>
-    <h2>Degree</h2>
-    <h3>Mechanical/Aerospace Engineering</h3>
-	    <p>
-	    	<a class="button button-clear button-positive" href="http://www.case.edu">Case Western Reserve University</a>
-	    </p>
+    <ion-list>
+      <ion-item>
+        <h3>Languages/Frameworks</h3>
+        <ion-list>
+          <ion-item ng-repeat="language in languages">{{language.name}}</ion-item>
+        </ion-list>
+      </ion-item>
+      <ion-item>
+        <h3>Education</h3>
+        <ion-list>
+          <h4>Bachelor of Science in Mechanical/Aerospace Engineering</h4>
+    	    	<a class="button button-clear button-positive" href="http://www.case.edu">
+              Case Western Reserve University
+            </a>
+        </ion-list>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
