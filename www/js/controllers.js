@@ -21,7 +21,8 @@ angular.module('starter.controllers', [])
 		  	{text:'App Demo', url:''}
 		  ],
 		  tags:['buisness', 'software', 'app'],
-		  image:{url:'http://s3.amazonaws.com/challengepost/photos/production/software_photos/000/148/970/datas/xlarge.png?1405905921'},
+		  images:[{url:'http://s3.amazonaws.com/challengepost/photos/production/software_photos/000/148/970/datas/xlarge.png?1405905921'}],
+	  	supportersIntro:'Administered by:',
 	  	supporters:[
 	  		{name:'Capital One', link:'https://www.capitalone.com/'}, 
 	  		{name:'D2D Fund', link:'http://www.d2dfund.org/'},
@@ -38,25 +39,46 @@ angular.module('starter.controllers', [])
 	  },
 	  {
 	  	title: 'Gate Generator',
+	  	subtitle: 'Product Engineering Automation Software',
 	  	description: 'Product engineering/design automation which generates a testable 3D model and matching drawings from customer specs.',
-	  	tags:['engineering', 'automation'],
+	  	supportersIntro:'Engineered for:',
+	  	supporters:[{name:'WACO Products', link:'http://www.wacoproducts.com'}],
+	  	tags:['engineering', 'automation', 'Waco', 'software'],
 	  	link:'',//Page with more detail on tools used
-	  	images:[{url:'', caption:''}]
+	  	images:[{url:'img/projects/gateGUI.png', caption:''}]
 	  },
 	  {
 	  	title:'Small Business C.M.S.', 
-	  	description:'Simplified Content Management System specific to small buisnesss', 
-	  	tags:['programming', 'software']
+	  	description:'Simplified Content Management System specific to small businesses. At Kyper, we enjoied the challenge of building this from scratch using Nodejs and MongoDB.', 
+	  	tags:['programming', 'software', 'nodejs', 'javascript'],
+	  	images:[{url:'img/projects/cms1.png'}],
+	  	supportersIntro: 'Challenge Project At:',
+	  	supporters:[{name:'Kyper'}]
 	  },
 	  {
-	  	title:'Wakeboard Tower', 
-	  	description:'Custom Designed/Built Industrial grade wakeboard tower', 
-	  	tags:['engineering', 'modeling']
+	  	title:'Pruvit Tower',
+	  	subtitle:'Industrial grade wakeboard tower',
+	  	description:'Custom designed/built wakeboard tower capable of towing two riders as well as working as a jumping platform.', 
+	  	tags:['engineering', 'modeling', 'welding'],
+	  	images:[
+	  		{url:'img/projects/wakeboardTower/towerdesign.png'}, 
+	  		{url:'img/projects/wakeboardTower/WakeboardTowerDesign.jpg'}, 
+	  		{url:'img/projects/wakeboardTower/TowerFinished.jpg'}
+	  	],
+	  	supportersIntro:'Personal design built as a bonus',
+	  	supporters:[{name:'WACO Products'}]
 	  },
 	  {
-	  	title:'Garbage Bot', 
-	  	description:'', 
-	  	tags:['engineering', 'welding', 'modeling', 'design', 'PLTW']
+	  	title:'Garbage Can Bot',
+	  	subtitle:'Teachers are not Maids',
+	  	description:'Design/Built aluminum robot that carries a garbage can around Severna Park High School cafateria for students to dispose of lunch garbage. Previously this job would be handled by teachers, who would have to give up one of their planning periods.',
+	  	extras:[
+	  		{
+	  			title:'PLTW Senior Design Project'
+	  		}
+	  	], 
+	  	tags:['engineering', 'welding', 'modeling', 'design', 'PLTW'],
+	  	images:[{url:'img/projects/bot.jpg'}]
 	  }
   ];//End of $scope.projects
   $scope.viewLink = function(linkObj){
@@ -67,9 +89,61 @@ angular.module('starter.controllers', [])
 .controller('ResumeCtrl', function($scope, Friends) {
 	console.log('ResumeCtrl');
 	$scope.languages = [
-		{name:'Javascript', frameworks:[]},
-		{name:'Angular', link:'http://angularjs.org'}, 
-		{name:'Grunt', link:'http://gruntjs.com/'}
+		{name:'Javascript', frameworks:[
+			{name:'Angular', link:'http://angularjs.org'}, 
+			{name:'Grunt', link:'http://gruntjs.com/'},
+			{name:'Yeoman', link:''},
+			{name:'Famous', link:'http://famo.us'},
+			{name:'Firebase/AngularFire', link:''},
+			{name:'Parse Cloud Code'},
+			{name:'Nodejs', link:'http://nodejs.org'}
+			]
+		},
+		{name:'HTML+CSS3', frameworks:[
+			{name:'Twitter Bootstrap', link:'http://bootstrap.com'}, 
+			{name:'Ionic', link:'http://ionicframework.com'},
+			{name:'LESS'},
+			{name:'SASS'}
+			]
+		},
+		{name:'Golang', link:'http://golang.org'},
+		{name:'Ruby on Rails', },
+		{name:'jQuery'},
+		{name:'Less/Sass'},
+		{name:'GIT versioning'},
+		{name:'Objective - C', link:'http://apple.com'},
+		
+
+		
+	];
+	$scope.dataBases = [
+		{name:'noSQL', 
+			frameworks:[
+				{name:'mongoDB'}, 
+				{name:'Firebase'}, 
+				{name:'Parse'},
+			]
+		},
+		{name:'SQL',
+			frameworks:[
+				{name:'MYSQL'},
+				{name:'SQLite'}
+			]
+		},
+		{name:'Key Value Store',
+			frameworks:[
+				{name:'REDIS'},
+				{name:'REDIGO'},
+				{name:'REDINODE'}
+			]
+		}
+	]
+	$scope.software = [
+		{name:'Autodesk Inventor', type:'engineering', link:'http://autodeskusa.com'},
+		{name:'Solidworks', type:'engineering', link:''},
+		{name:'Unix Bash', type:'programming'},
+		{name:'Gcode/Shopbot', type:'engineering/programming'}
+
 	]
 
 })

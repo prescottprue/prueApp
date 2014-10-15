@@ -8,18 +8,19 @@
 		  </div>
 
 		  <div class="item item-body">
-		    <img class="full-image" ng-src="{{project.image.url}}">
-		    <div class="row" style="text-align: center;">
+		  	<!-- Project Links -->
+		  	<div class="row" style="text-align: center;">
 		    	<div class="col" ng-repeat="link in project.links">
 		    		<button class="button button-clear button-positive" ng-click="viewLink(link)" >
 		    			{{link.text}}
 		    		</button>
 		    	</div>
 		    </div>
+		    <img class="full-image" ng-src="{{project.images[0].url}}">
 		    <p>
 		      {{project.description}}
 		    </p>
-    		<div class="row remove-spacing"><p>Administered by:</p></div>
+    		<div class="row remove-spacing"><p>{{project.supportersIntro}}</p></div>
 		  	<div class="row remove-spacing">
 		  		<div class="col remove-spacing" ng-repeat="company in project.supporters" style="height:25px;">
 		  			<button class="button button-clear button-positive button-supporter" style="height:20px;">
